@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="splresearch" nsURI="http://www.example.org/splresearch" nsPrefix="splresearch">
+  <eClassifiers xsi:type="ecore:EClass" name="BuissnessView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MplFeatureModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependecy" upperBound="-1"
+        eType="#//Dependecy" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextvariabilitymodel"
+        upperBound="-1" eType="#//ContextVariabilityModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="product" lowerBound="1"
+        upperBound="-1" eType="#//Product"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featuemodel" lowerBound="1"
+        upperBound="-1" eType="#//FeatueModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timingconstraints" upperBound="-1"
+        eType="#//TimingConstraints" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Product">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermidiateView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatueModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Features" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindingtime" upperBound="-1"
+        eType="#//BindingTime" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featuregroup" upperBound="-1"
+        eType="#//FeatureGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featurelink" upperBound="-1"
+        eType="#//FeatureLink" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HyperTrees"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependecy" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PLiCApproach"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MPL">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="product" lowerBound="1"
+        upperBound="-1" eType="#//Product" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fourvm" lowerBound="1"
+        upperBound="-1" eType="#//FourVM" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plicapproach" upperBound="-1"
+        eType="#//PLiCApproach" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mplvariability" lowerBound="1"
+        upperBound="-1" eType="#//Variability"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FourVM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralview" upperBound="-1"
+        eType="#//BehavioralView" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buissnessview" upperBound="-1"
+        eType="#//BuissnessView" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dandiview" upperBound="-1"
+        eType="#//DependencyandInteractionView" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermidiateview" upperBound="-1"
+        eType="#//IntermidiateView" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hypertrees" upperBound="-1"
+        eType="#//HyperTrees" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Features">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childnode" upperBound="-1"
+        eType="#//ChildNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootnode" upperBound="-1"
+        eType="#//RootNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featurelink" eType="#//FeatureLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featuregroup" eType="#//FeatureGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindingtime" eType="#//BindingTime"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precedenceconstraints"
+        eType="#//PrecedenceConstraints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SPL">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mpl" lowerBound="1" upperBound="-1"
+        eType="#//MPL" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variability" lowerBound="1"
+        upperBound="-1" eType="#//Variability" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyandInteractionView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureGroup" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Exclude" eSuperTypes="#//Dependecy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Exclude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variability">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mplfeaturemodel" lowerBound="1"
+        upperBound="-1" eType="#//MplFeatureModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureconfiguration" upperBound="-1"
+        eType="#//FeatureConfiguration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cdependecy" lowerBound="1"
+        upperBound="-1" eType="#//Dependecy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featurelink" eType="#//FeatureLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precedenceconstraints"
+        eType="#//PrecedenceConstraints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XOR" eSuperTypes="#//FeatureGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="XOR" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureLink">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//VD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//FeatureGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="OR" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rdependecy" lowerBound="1"
+        eType="#//Dependecy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featurelink" eType="#//FeatureLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precedenceconstraints"
+        eType="#//PrecedenceConstraints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BT">
+    <eLiterals name="SystemDesignTime"/>
+    <eLiterals name="CodeGenerationTime" value="1"/>
+    <eLiterals name="PreCompileTime" value="2"/>
+    <eLiterals name="PostBuildTime" value="3"/>
+    <eLiterals name="RunTime" value="4"/>
+    <eLiterals name="LinkTime" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VD">
+    <eLiterals name="Mandatory"/>
+    <eLiterals name="Optional" value="1"/>
+    <eLiterals name="Alternate" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehavioralView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BindingTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//BT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Require" eSuperTypes="#//Dependecy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Require" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextFeatures">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="#//Cardinality"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cflink" eType="#//CFLink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependecy" eType="#//Dependecy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextVariabilityModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
+        eType="#//Context" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Context">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextfeatures" upperBound="-1"
+        eType="#//ContextFeatures" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cflink" upperBound="-1"
+        eType="#//CFLink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" upperBound="-1"
+        eType="#//Cardinality" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CFLink">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//VD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimingConstraints"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrecedenceConstraints" eSuperTypes="#//TimingConstraints">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timmingcons" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configureFM" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="confeatuemodel" eType="#//FeatueModel"/>
+  </eClassifiers>
+</ecore:EPackage>
